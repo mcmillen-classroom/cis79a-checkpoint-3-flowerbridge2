@@ -23,6 +23,18 @@ public class QuizOOPMain
         while (index < questions.length)
         {
             System.out.println(questions[index].getText());
+
+            // If i should read a boolean
+            if (questions[index].getAnswerType() == 0)
+            {
+
+            }
+            else if (questions[index].getAnswerType() == 1)
+            {
+                // read a string
+            }
+
+            // should I read in boolean or string?
             System.out.print("Enter t/f: ");
             String in = input.nextLine();
             boolean boolResponse;
