@@ -3,12 +3,33 @@ package demc.checkpoint3;
 public class Question
 {
     private String mText;
-    private boolean mAnswer;
+    private boolean mTFAnswer;
+    private String mFillAnswer;
+    // 0 = read in boolean, 1 = read in string, 2 = read in number
+    private int mAnswerType;
 
     public Question(String text, boolean ans)
     {
         mText = text;
-        mAnswer = ans;
+        mTFAnswer = ans;
+        mAnswerType = 0;
+    }
+
+    public Question(String text, String ans)
+    {
+        mText = text;
+        mFillAnswer = ans;
+        mAnswerType = 1;
+    }
+
+    public int getAnswerType()
+    {
+        return mAnswerType;
+    }
+
+    public String getFillAnswer()
+    {
+        return mFillAnswer;
     }
 
     public String getText()
@@ -21,18 +42,18 @@ public class Question
         mText = text;
     }
 
-    public boolean getAnswer()
+    public boolean getTFAnswer()
     {
-        return mAnswer;
+        return mTFAnswer;
     }
 
-    public void setAnswer(boolean answer)
+    public void setTFAnswer(boolean TFAnswer)
     {
-        mAnswer = answer;
+        mTFAnswer = TFAnswer;
     }
 
     public String toString()
     {
-        return "Question: " + mText + "  answer: " + mAnswer;
+        return "Question: " + mText + "  answer: " + mTFAnswer;
     }
 }
