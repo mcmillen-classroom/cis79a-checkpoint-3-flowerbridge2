@@ -7,9 +7,10 @@ public class QuizOOPMain
     // this is where the app starts
     public static void main(String[] args)
     {
-        Question[] questions = new Question[2];
+        Question[] questions = new Question[3];
         questions[0] = new Question("Laney is better than BCC?", true);
         questions[1] = new Question("Java is an easy to understand language?", false);
+        questions[2] = new Question("Which season will the F building be open?", "fall");
 
         int index = 0;
         int score = 0;
@@ -35,7 +36,7 @@ public class QuizOOPMain
                 boolResponse = false;
             }
 
-            if (questions[index].getAnswer() == boolResponse)
+            if (questions[index].getTFAnswer() == boolResponse)
             {
                 System.out.println("You are correct!");
             }
