@@ -10,7 +10,7 @@ public class QuizOOPMain
         Question[] questions = new Question[3];
         questions[0] = new Question("Laney is better than BCC?", true);
         questions[1] = new Question("Java is an easy to understand language?", false);
-        questions[2] = new Question("Which season will the F building be open?", "fall", "Fall", "Fall 2019", "Maybe never");
+        questions[2] = new Question("Which season will the F building be open?", "fall", "Fall 2019", "Maybe never");
 
         int index = 0;
         int score = 0;
@@ -19,7 +19,6 @@ public class QuizOOPMain
 
         System.out.println("Welcome to the quiz! Good luck!");
 
-        // 2 < 2 is false
         while (index < questions.length)
         {
             System.out.println(questions[index].getText());
@@ -31,7 +30,7 @@ public class QuizOOPMain
                 String in = input.nextLine();
                 boolean boolResponse;
 
-                if (in.equals("t"))
+                if (in.equals("t") || in.equals("true"))
                 {
                     boolResponse = true;
                 }
@@ -40,7 +39,7 @@ public class QuizOOPMain
                     boolResponse = false;
                 }
 
-                if (questions[index].getTFAnswer() == boolResponse)
+                if (questions[index].checkAnswer(boolResponse))
                 {
                     System.out.println("You are correct!");
                 }
@@ -53,17 +52,12 @@ public class QuizOOPMain
             {
                 System.out.print("Enter the blank: ");
                 String response = input.nextLine();
-                boolean foundAnswer = false;
 
-                for (String ans : questions[index].getFillAnswers())
+                if (questions[index].checkAnswer(response))
                 {
-                    if (ans.equalsIgnoreCase(response))
-                    {
-                        System.out.println("You are correct!");
-                        foundAnswer = true;
-                    }
+                    System.out.println("You are correct!");
                 }
-                if (!foundAnswer)
+                else
                 {
                     System.out.println("You are incorrect!");
                 }

@@ -4,7 +4,7 @@ public class Question
 {
     private String mText;
     private boolean mTFAnswer;
-    private String mFillAnswer;
+    private String[] mFillAnswers;
     // 0 = read in boolean, 1 = read in string, 2 = read in number
     private int mAnswerType;
 
@@ -15,11 +15,32 @@ public class Question
         mAnswerType = 0;
     }
 
-    public Question(String text, String ans)
+    public Question(String text, String... ans)
     {
         mText = text;
-        mFillAnswer = ans;
+        mFillAnswers = ans;
         mAnswerType = 1;
+    }
+
+    // checks the user inputs against the answer.
+    // returns whether the user answered the question correctly.
+    public boolean checkAnswer(boolean userAnswer)
+    {
+        return (mTFAnswer == userAnswer);
+    }
+
+    // fill the blank question check
+    public boolean checkAnswer(String userAnswer)
+    {
+        for (String ans : getFillAnswers())
+        {
+            if (ans.equalsIgnoreCase(userAnswer))
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     public int getAnswerType()
@@ -27,9 +48,9 @@ public class Question
         return mAnswerType;
     }
 
-    public String getFillAnswer()
+    public String[] getFillAnswers()
     {
-        return mFillAnswer;
+        return mFillAnswers;
     }
 
     public String getText()
