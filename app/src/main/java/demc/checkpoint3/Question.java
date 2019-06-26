@@ -3,17 +3,15 @@ package demc.checkpoint3;
 public class Question
 {
     private String mText;
-    private boolean mTFAnswer;
     private String[] mFillAnswers;
     // 0 = read in boolean, 1 = read in string, 2 = read in number
     private int mAnswerType;
 
-    public Question(String text, boolean ans)
+    public Question(String text)
     {
         mText = text;
-        mTFAnswer = ans;
-        mAnswerType = 0;
     }
+
 
     public Question(String text, String... ans)
     {
@@ -22,11 +20,10 @@ public class Question
         mAnswerType = 1;
     }
 
-    // checks the user inputs against the answer.
-    // returns whether the user answered the question correctly.
-    public boolean checkAnswer(boolean userAnswer)
+    // stub method - intentionally does nothing
+    public boolean checkAnswer(boolean boolResponse)
     {
-        return (mTFAnswer == userAnswer);
+        return false;
     }
 
     // fill the blank question check
@@ -63,18 +60,5 @@ public class Question
         mText = text;
     }
 
-    public boolean getTFAnswer()
-    {
-        return mTFAnswer;
-    }
 
-    public void setTFAnswer(boolean TFAnswer)
-    {
-        mTFAnswer = TFAnswer;
-    }
-
-    public String toString()
-    {
-        return "Question: " + mText + "  answer: " + mTFAnswer;
-    }
 }

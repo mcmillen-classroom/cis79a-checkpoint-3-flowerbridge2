@@ -8,8 +8,8 @@ public class QuizOOPMain
     public static void main(String[] args)
     {
         Question[] questions = new Question[3];
-        questions[0] = new Question("Laney is better than BCC?", true);
-        questions[1] = new Question("Java is an easy to understand language?", false);
+        questions[0] = new TrueFalseQuestion("Laney is better than BCC?", true);
+        questions[1] = new TrueFalseQuestion("Java is an easy to understand language?", false);
         questions[2] = new Question("Which season will the F building be open?", "fall", "Fall 2019", "Maybe never");
 
         int index = 0;
