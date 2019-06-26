@@ -23,19 +23,6 @@ public class QuizOOPMain
         {
             System.out.println(questions[index].getText());
 
-            System.out.print("Enter t/f: ");
-            String in = input.nextLine();
-            boolean boolResponse;
-
-            if (in.equals("t") || in.equals("true"))
-            {
-                boolResponse = true;
-            }
-            else
-            {
-                boolResponse = false;
-            }
-
             if (questions[index].readInputAndCheckAnswer(input))
             {
                 System.out.println("You are correct!");
@@ -44,7 +31,6 @@ public class QuizOOPMain
             {
                 System.out.println("You are incorrect!");
             }
-
 
             index++;
         }

@@ -1,5 +1,7 @@
 package demc.checkpoint3;
 
+import java.util.Scanner;
+
 public class FillTheBlankQuestion extends Question
 {
     private String[] mFillAnswers;
@@ -28,5 +30,13 @@ public class FillTheBlankQuestion extends Question
     public String[] getFillAnswers()
     {
         return mFillAnswers;
+    }
+
+    @Override
+    public boolean readInputAndCheckAnswer(Scanner input)
+    {
+        System.out.println("Enter answer: ");
+        String in = input.nextLine();
+        return checkAnswer(in);
     }
 }

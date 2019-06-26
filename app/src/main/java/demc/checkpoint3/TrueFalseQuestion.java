@@ -1,5 +1,7 @@
 package demc.checkpoint3;
 
+import java.util.Scanner;
+
 public class TrueFalseQuestion extends Question
 {
     private boolean mTFAnswer;
@@ -46,5 +48,24 @@ public class TrueFalseQuestion extends Question
     public String[] getFillAnswers()
     {
         return mFillAnswers;
+    }
+
+    @Override
+    public boolean readInputAndCheckAnswer(Scanner input)
+    {
+        System.out.print("Enter t/f: ");
+        String in = input.nextLine();
+        boolean boolResponse;
+
+        if (in.equals("t") || in.equals("true"))
+        {
+            boolResponse = true;
+        }
+        else
+        {
+            boolResponse = false;
+        }
+
+        return checkAnswer(boolResponse);
     }
 }
