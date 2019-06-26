@@ -1,9 +1,10 @@
 package demc.checkpoint3;
 
+import java.util.Scanner;
+
 public class Question
 {
     private String mText;
-    private String[] mFillAnswers;
     // 0 = read in boolean, 1 = read in string, 2 = read in number
     private int mAnswerType;
 
@@ -12,42 +13,23 @@ public class Question
         mText = text;
     }
 
-
-    public Question(String text, String... ans)
-    {
-        mText = text;
-        mFillAnswers = ans;
-        mAnswerType = 1;
-    }
-
     // stub method - intentionally does nothing
+    // only applies to true false question
     public boolean checkAnswer(boolean boolResponse)
     {
         return false;
     }
 
-    // fill the blank question check
+    // stub method
+    // only applies to fill the blank question
     public boolean checkAnswer(String userAnswer)
     {
-        for (String ans : getFillAnswers())
-        {
-            if (ans.equalsIgnoreCase(userAnswer))
-            {
-                return true;
-            }
-        }
-
         return false;
     }
 
     public int getAnswerType()
     {
         return mAnswerType;
-    }
-
-    public String[] getFillAnswers()
-    {
-        return mFillAnswers;
     }
 
     public String getText()
@@ -60,5 +42,9 @@ public class Question
         mText = text;
     }
 
-
+    // stub
+    public boolean readInputAndCheckAnswer(Scanner input)
+    {
+        return false;
+    }
 }
