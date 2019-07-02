@@ -27,6 +27,8 @@ public class Question
         return false;
     }
 
+    public boolean checkAnswer(int userAnswer){return false;}
+
     public int getAnswerType()
     {
         return mAnswerType;
@@ -40,6 +42,10 @@ public class Question
     public void setText(String text)
     {
         mText = text;
+    }
+
+    public boolean isMultipleChoiceQuestion(){
+        return true;
     }
 
     // stub
